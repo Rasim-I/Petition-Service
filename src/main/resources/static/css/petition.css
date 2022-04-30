@@ -1,0 +1,95 @@
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+footer {
+  height: 110px;
+  background-color: #8bcaf7;
+}
+
+footer #cloud_image {
+  width: 70px;
+  display: inline;
+  position: relative;
+  margin: 20px;
+  left: 200px;
+}
+
+footer #rights {
+  display: inline;
+  position: relative;
+  left: 200px;
+  color: black;
+  font-size: 19px;
+  font-family: "Fira Code";
+}
+
+footer #contact_mail {
+  color: blue;
+  font-size: 19px;
+  font-family: "Fira Code";
+  margin-top: 50px;
+  margin-right: 80px;
+  float: right;
+  background: none;
+}
+
+footer #contact_mail:hover {
+  color: black;
+}
+
+.petition_info_container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  font-size: 20px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  margin-top: 50px;
+  text-align: center;
+  border: 2px solid deepskyblue;
+  border-radius: 10px;
+}
+
+.petition_options_container {
+  align-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 25%;
+  margin-top: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.remove-option {
+  margin: 25px;
+}
+
+.userPassField {
+  width: 10%;
+  display: inline;
+}
+
+.remove_btn {
+  margin-top: 5px;
+  display: inline;
+}
+
+.petition {
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 40px;
+}
+
+/*# sourceMappingURL=petition.css.map */

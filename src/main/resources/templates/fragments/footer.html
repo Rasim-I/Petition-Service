@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+
+
+<footer class="footer">
+    <img id="cloud_image" th:src="@{/images/cloud.png}">
+
+    <div id="rights"><label id ="year"></label> &copy;
+        <script>
+            let current_year = new Date();
+            document.getElementById("year").innerHTML = current_year.getFullYear().toString();
+        </script>
+    </div>
+
+    <a id="contact_mail" href="mailto:test@example.com">Contact us</a>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+@import "default";
+
+.petition_info_container{
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  font-size: 20px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  margin-top: 50px;
+  text-align: center;
+  border: 2px solid deepskyblue;
+  border-radius: 10px;
+}
+
+
+.petition_options_container{
+  align-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 25%;
+  margin-top: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+
+}
+
+.remove-option{
+  margin: 25px;
+}
+
+.userPassField{
+  width: 10%;
+  display: inline;
+}
+.remove_btn{
+  margin-top: 5px;
+  display: inline;
+}
+
+.petition{
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 40px;
+
+}

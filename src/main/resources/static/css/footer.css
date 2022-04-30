@@ -1,0 +1,32 @@
+
+footer {
+    height: 110px;
+    background-color: #8bcaf7;
+}
+footer #cloud_image {
+    width: 70px;
+    display: inline;
+    position: relative;
+    margin: 20px;
+    left: 200px;
+}
+footer #rights {
+    display: inline;
+    position: relative;
+    left: 200px;
+    color: black;
+    font-size: 19px;
+    font-family: "Fira Code";
+}
+footer #contact_mail {
+    color: blue;
+    font-size: 19px;
+    font-family: "Fira Code";
+    margin-top: 50px;
+    margin-right: 80px;
+    float: right;
+    background: none;
+}
+footer #contact_mail:hover {
+    color: black;
+}
