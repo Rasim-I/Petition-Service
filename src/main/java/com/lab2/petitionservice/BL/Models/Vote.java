@@ -5,10 +5,10 @@ import java.util.UUID;
 
 public class Vote {
 
-    public UUID Id;
-    public UUID PetitionId;
-    public String User;
-    public Date DateSubmitted;
+    private final UUID Id;
+    private final UUID PetitionId;
+    private final String User;
+    private final Date DateSubmitted;
 
     public UUID getId() {
         return Id;

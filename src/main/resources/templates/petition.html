@@ -36,7 +36,15 @@
                         <input class="userPassField" type="hidden" name="petitionId" th:value="${petition.id}">
                         <input type="password" placeholder="Password"
                                class="form-control userPassField" name="userPassword" id="userPassword">
-                        <button type="submit" class="btn btn-danger remove_btn">Remove petition</button>
+
+                        <th:block th:if="${petition.dateExpiring != null}">
+                            <button type="submit" class="btn btn-danger remove_btn">Remove petition</button>
+                        </th:block>
+
+                        <th:block th:unless="${petition.dateCreated} != null">
+                            <button type="submit" class="btn btn-info remove_btn">Something wrong</button>
+                        </th:block>
+
                     </div>
                 </form>
             </div>

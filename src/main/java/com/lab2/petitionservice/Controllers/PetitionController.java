@@ -27,8 +27,9 @@ public class PetitionController {
     }
 
     @GetMapping("/")
-    public String MainPage(Model model){
+    public String MainPage(Model model, boolean isOperationFailed){
         model.addAttribute("petitions", Petitions());
+        model.addAttribute("isOperationFailed", isOperationFailed);
         return "main";
     }
 
@@ -37,10 +38,11 @@ public class PetitionController {
         return "createPetition";
     }
 
-    @PostMapping("/create")
+    @PostMapping("/create")  //return Created Petition ID
     ModelAndView CreatePetition(Model model, @RequestParam String petitionTitle, @RequestParam String petitionText, @RequestParam String petitionAuthorName){
         PetitionService.CreatePetition(petitionTitle, petitionText, petitionAuthorName);
-        return new ModelAndView("redirect:/");
+        ModelAndView modelAndView = new ModelAndView("redirect:/");
+        return modelAndView;//new ModelAndView("redirect:/");
     }
 
     @GetMapping("/vote")
@@ -50,13 +52,18 @@ public class PetitionController {
         return new ModelAndView("redirect:/");
     }
 
-    @PostMapping("/remove")
+    @PostMapping("/remove")                                                                                 //delete mapping
     ModelAndView RemovePetition(Model model, @RequestParam UUID petitionId, @RequestParam String userPassword){
+        ModelAndView modelAndView = new ModelAndView("redirect:/");
         if(userPassword.equals("12345")){
             PetitionService.RemovePetition(petitionId);
             System.out.println("--------------"+petitionId+"----------------");
         }
-        return new ModelAndView("redirect:/");
+        else
+        {
+            modelAndView.addObject("isOperationFailed", true);
+        }
+        return modelAndView;
         //return MainPage(model);
     }
 
