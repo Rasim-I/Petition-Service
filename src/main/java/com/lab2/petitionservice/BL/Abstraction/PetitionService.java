@@ -10,6 +10,8 @@ import java.util.UUID;
 @Service
 public interface PetitionService {
      List<Petition> getListPetitions();
+     List<Petition> getPetitionsPaginated(int pageSize, int pageNumber);
+     List<Petition> getPetitionsByAuthor(String author);
      Petition getPetition(String petitionId);
      void CreatePetition(String petitionTitle, String petitionText, String petitionAuthorName);
      void RemovePetition(UUID PetitionId);

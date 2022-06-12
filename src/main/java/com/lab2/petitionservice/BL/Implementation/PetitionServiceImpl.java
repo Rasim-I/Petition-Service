@@ -7,8 +7,10 @@ import com.lab2.petitionservice.DAL.Abstraction.PetitionRepository;
 import com.lab2.petitionservice.DAL.Implementation.PetitionRepositoryImpl;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 
 public class PetitionServiceImpl implements PetitionService {
@@ -19,8 +21,38 @@ public class PetitionServiceImpl implements PetitionService {
         this.petitionRepository = petitionRepository;
     }
 
+    @Override
     public List<Petition> getListPetitions() {
         return petitionRepository.GetAll();
+    }
+
+    public List<Petition> getPetitionsPaginated(int pageSize, int pageNumber){
+
+        if (pageSize == 0)
+            pageSize = 2;
+        List<Petition> page = new ArrayList<>();
+
+        petitionRepository
+                .GetAll()
+                .stream()
+                .skip((pageNumber - 1)*pageSize)
+                .limit(pageSize)
+                .forEach(page::add);
+
+        return page;
+    }
+
+    @Override
+    public List<Petition> getPetitionsByAuthor(String author){
+
+        List<Petition> filtered = new ArrayList<>();
+
+        petitionRepository
+                .GetAll()
+                .stream()
+                .filter(x->x.getAuthor().equals(author))
+                .forEach(filtered::add);
+        return filtered;
     }
 
     @Override
